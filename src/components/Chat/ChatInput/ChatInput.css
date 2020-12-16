@@ -1,0 +1,11 @@
+.chat__input {
+  display: flex;
+  color: lightgray;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px;
+  border-top: 1px solid gray;
+  background-color: #474b53;
+}
