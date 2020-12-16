@@ -1,0 +1,36 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  background-color: #2f3135;
+  height: 100vh;
+}
+
+.sidebar__top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid rgb(60, 56, 56);
+}
+
+.sidebar__channels {
+  flex: 1;
+}
+
+.sidebar__channelsHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #2f3135;
+  color: gray;
+  align-items: center;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__addChannel:hover {
+  color: white;
+  cursor: pointer;
+}
