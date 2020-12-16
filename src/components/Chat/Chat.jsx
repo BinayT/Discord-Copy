@@ -8,7 +8,10 @@ function Chat() {
   return (
     <div className='chat'>
       <ChatHeader />
-      <ChatMessages />
+      <div className='chat__messages'>
+        <ChatMessages />
+        <ChatMessages />
+      </div>
       <ChatInput />
     </div>
   );

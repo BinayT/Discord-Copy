@@ -70,6 +70,12 @@
   padding: 5px;
 }
 
+.sidebar__voiceIcons > .MuiSvgIcon-root:hover,
+.sidebar__profileIcons > .MuiSvgIcon-root:hover {
+  cursor: pointer;
+  color: white;
+}
+
 /* Profile Part */
 
 .sidebar__profileInfo {

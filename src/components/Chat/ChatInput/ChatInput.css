@@ -31,6 +31,8 @@
   padding: 5px;
 }
 
+.chat__input > .MuiSvgIcon-root:hover,
 .chat__inputIcons > .MuiSvgIcon-root:hover {
-  color: rgba(204, 125, 125, 0.193);
+  cursor: pointer;
+  color: white;
 }
