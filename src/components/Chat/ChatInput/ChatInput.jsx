@@ -13,7 +13,9 @@ function ChatInput() {
       <AddCircleOutlineOutlined fontSize='large' />
       <form>
         <input placeholder={`Message #Youtube`} />
-        <button type='submit'>Send Message</button>
+        <button type='submit' className='chat__inputButton'>
+          Send Message
+        </button>
       </form>
 
       <div className='chat__inputIcons'>

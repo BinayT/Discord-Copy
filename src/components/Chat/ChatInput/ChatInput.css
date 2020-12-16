@@ -9,3 +9,28 @@
   border-top: 1px solid gray;
   background-color: #474b53;
 }
+
+.chat__input > form > input {
+  padding: 15px;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline-width: 0;
+  color: white;
+  font-size: large;
+}
+
+.chat__input > form {
+  flex: 1;
+}
+
+.chat__inputButton {
+  display: none;
+}
+.chat__inputIcons > .MuiSvgIcon-root {
+  padding: 5px;
+}
+
+.chat__inputIcons > .MuiSvgIcon-root:hover {
+  color: rgba(204, 125, 125, 0.193);
+}
