@@ -10,6 +10,7 @@
 .sidebar__top {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
   border-bottom: 3px solid rgb(60, 56, 56);
 }
 

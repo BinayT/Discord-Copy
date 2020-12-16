@@ -19,7 +19,6 @@ function Sidebar() {
 
   return (
     <div className='sidebar'>
-      <h2>I'm a sidebar</h2>
       <div className='sidebar__top'>
         <h3>Binay's Room</h3>
         <ExpandMore />
