@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ExpandMore,
   SignalCellularAltOutlined,
@@ -15,9 +15,28 @@ import { Avatar } from '@material-ui/core';
 import './Sidebar.css';
 import SidebarChannel from './SidebarChannel/SidebarChannel';
 import { selectUser } from '../../reducers/userReducer';
+import db from '../../firebase';
 
 function Sidebar() {
-  function handleAdd() {}
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    db.collection('channels').onSnapshot((snapshot) => {
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          channel: doc.data(),
+        }))
+      );
+    });
+  });
+
+  const handleAddChannel = () => {
+    const channelName = prompt('Enter a new channel name:');
+    if (channelName) {
+      db.collection('channels').add({ channelName });
+    }
+  };
 
   const userData = useSelector(selectUser);
 
@@ -36,14 +55,13 @@ function Sidebar() {
             <ExpandMore />
             <h4>Text Channel</h4>
           </div>
-          <AddIcon onClick={handleAdd} className='sidebar__addChannel' />
+          <AddIcon onClick={handleAddChannel} className='sidebar__addChannel' />
         </div>
 
         <div className='sidebar__channelsList'>
-          <SidebarChannel />
-          <SidebarChannel />
-          <SidebarChannel />
-          <SidebarChannel />
+          {channels.map((el) => (
+            <SidebarChannel />
+          ))}
         </div>
       </div>
 
