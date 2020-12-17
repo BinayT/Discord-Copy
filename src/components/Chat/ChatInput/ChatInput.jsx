@@ -7,10 +7,7 @@ import {
 } from '@material-ui/icons';
 import './ChatInput.css';
 
-function ChatInput({ channelName, channelId }) {
-  const [input, setInput] = useState('');
-  console.log(input);
-
+function ChatInput({ channelName, channelId, input, sendMessage, setInput }) {
   return (
     <div className='chat__input'>
       <AddCircleOutlineOutlined fontSize='large' />
@@ -25,6 +22,7 @@ function ChatInput({ channelName, channelId }) {
           type='submit'
           disable={!channelId}
           className='chat__inputButton'
+          onClick={sendMessage}
         >
           Send Message
         </button>

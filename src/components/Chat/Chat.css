@@ -9,3 +9,42 @@
 .chat__messages {
   flex: 1;
 }
+
+.chat__input {
+  display: flex;
+  color: lightgray;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px;
+  border-top: 1px solid gray;
+  background-color: #474b53;
+}
+
+.chat__input > form > input {
+  padding: 15px;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline-width: 0;
+  color: white;
+  font-size: large;
+}
+
+.chat__input > form {
+  flex: 1;
+}
+
+.chat__inputButton {
+  display: none;
+}
+.chat__inputIcons > .MuiSvgIcon-root {
+  padding: 5px;
+}
+
+.chat__input > .MuiSvgIcon-root:hover,
+.chat__inputIcons > .MuiSvgIcon-root:hover {
+  cursor: pointer;
+  color: white;
+}
