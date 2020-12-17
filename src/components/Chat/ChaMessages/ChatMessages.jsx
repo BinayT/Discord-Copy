@@ -3,17 +3,19 @@ import { Avatar } from '@material-ui/core';
 
 import './ChatMessages.css';
 
-function ChatMessages() {
+function ChatMessages({ message, user, timestamps }) {
   return (
     <div className='chat__messages'>
       <div className='message'>
-        <Avatar />
+        <Avatar src={user.photoURL} />
         <div className='message__info'>
           <h4>
-            Binay Timilsina
-            <span className='message__timestamp'>Timestamp</span>
+            {user.displayName}
+            <span className='message__timestamp'>
+              {new Date(timestamps?.toDate()).toUTCString()}
+            </span>
           </h4>
-          <p>This is a message</p>
+          <p>{message}</p>
         </div>
       </div>
     </div>

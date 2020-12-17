@@ -49,7 +49,11 @@ function Chat() {
       <ChatHeader channelName={channelName} channelId={channelId} />
       <div className='chat__messages'>
         {messages.map((message) => (
-          <ChatMessages />
+          <ChatMessages
+            message={message.message}
+            user={message.user}
+            timestamps={message.timestamps}
+          />
         ))}
       </div>
       <div className='chat__input'>
