@@ -9,13 +9,19 @@ import {
 } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
+import { useSelector } from 'react-redux';
+import { Avatar } from '@material-ui/core';
 
 import './Sidebar.css';
 import SidebarChannel from './SidebarChannel/SidebarChannel';
-import { Avatar } from '@material-ui/core';
+import { selectUser } from '../../reducers/userReducer';
 
 function Sidebar() {
   function handleAdd() {}
+
+  const userData = useSelector(selectUser);
+
+  const { displayName, photoURL, uid } = userData;
 
   return (
     <div className='sidebar'>
@@ -57,10 +63,10 @@ function Sidebar() {
       </div>
 
       <div className='sidebar__profile'>
-        <Avatar />
+        <Avatar src={photoURL} />
         <div className='sidebar__profileInfo'>
-          <h3>Binay Timilsina</h3>
-          <p>@myid</p>
+          <h3>{displayName}</h3>
+          <p>@{uid.substring(0, 5)}</p>
         </div>
         <div className='sidebar__profileIcons'>
           <MicNoneOutlined />

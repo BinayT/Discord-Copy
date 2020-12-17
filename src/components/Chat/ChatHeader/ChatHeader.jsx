@@ -6,9 +6,11 @@ import {
   RoomOutlined,
   Send,
   SearchOutlined,
+  ExitToAppOutlined,
 } from '@material-ui/icons';
 
 import './ChatHeader.css';
+import { auth } from '../../../firebase';
 
 function ChatHeader() {
   return (
@@ -26,8 +28,8 @@ function ChatHeader() {
           <input type='text' placeholder='Search' />
           <SearchOutlined />
         </div>
-        <Send />
         <Help />
+        <ExitToAppOutlined onClick={() => auth.signOut()} />
       </div>
     </div>
   );
