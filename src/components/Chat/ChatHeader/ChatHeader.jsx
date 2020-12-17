@@ -4,7 +4,6 @@ import {
   Help,
   NotificationsNoneOutlined,
   RoomOutlined,
-  Send,
   SearchOutlined,
   ExitToAppOutlined,
 } from '@material-ui/icons';
@@ -12,12 +11,13 @@ import {
 import './ChatHeader.css';
 import { auth } from '../../../firebase';
 
-function ChatHeader() {
+function ChatHeader({ channelName }) {
   return (
     <div className='chatHeader'>
       <div className='chatHeader__left'>
         <h3>
-          <span className='chatHeader__hash'>#</span>Youtube
+          <span className='chatHeader__hash'>#</span>
+          {channelName}
         </h3>
       </div>
       <div className='chatHeader__right'>

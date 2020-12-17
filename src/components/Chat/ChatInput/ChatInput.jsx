@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AddCircleOutlineOutlined,
   CardGiftcardOutlined,
@@ -7,13 +7,25 @@ import {
 } from '@material-ui/icons';
 import './ChatInput.css';
 
-function ChatInput() {
+function ChatInput({ channelName, channelId }) {
+  const [input, setInput] = useState('');
+  console.log(input);
+
   return (
     <div className='chat__input'>
       <AddCircleOutlineOutlined fontSize='large' />
       <form>
-        <input placeholder={`Message #Youtube`} />
-        <button type='submit' className='chat__inputButton'>
+        <input
+          placeholder={`Message #${channelName}`}
+          disable={!channelId}
+          onChange={(e) => setInput(e.target.value)}
+          value={input}
+        />
+        <button
+          type='submit'
+          disable={!channelId}
+          className='chat__inputButton'
+        >
           Send Message
         </button>
       </form>

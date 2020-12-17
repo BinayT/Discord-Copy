@@ -29,7 +29,7 @@ function Sidebar() {
         }))
       );
     });
-  });
+  }, []);
 
   const handleAddChannel = () => {
     const channelName = prompt('Enter a new channel name:');
@@ -53,7 +53,7 @@ function Sidebar() {
         <div className='sidebar__channelsHeader'>
           <div className='sidebar__header'>
             <ExpandMore />
-            <h4>Text Channel</h4>
+            <h4>Channels</h4>
           </div>
           <AddIcon onClick={handleAddChannel} className='sidebar__addChannel' />
         </div>
